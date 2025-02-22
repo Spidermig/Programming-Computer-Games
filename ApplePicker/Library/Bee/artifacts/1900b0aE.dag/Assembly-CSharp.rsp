@@ -356,6 +356,7 @@
 "Assets/Scripts/AppleScript.cs"
 "Assets/Scripts/AppleTreeScript.cs"
 "Assets/Scripts/BasketScript.cs"
+"Assets/Scripts/HighScoreScript.cs"
 "Assets/Scripts/ScoreCounterScript.cs"
 -langversion:9.0
 /deterministic

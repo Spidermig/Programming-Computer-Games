@@ -5,10 +5,14 @@ using UnityEngine;
 public class AppleScript : MonoBehaviour
 {
     public static float bottomY = -20f;
-
+    public int point = 100;
     // Update is called once per frame
     void Update()
     {
+        // Check if this is a Golden Apple and update points accordingly
+        if (gameObject.CompareTag("GoldenApple")) {
+            point = 200;
+        } 
         if (transform.position.y < bottomY) {
             Destroy(this.gameObject);
 

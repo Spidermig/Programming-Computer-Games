@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BasketScript.cs" />
     <Compile Include="Assets\Scripts\ScoreCounterScript.cs" />
+    <Compile Include="Assets\Scripts\HighScoreScript.cs" />
     <Compile Include="Assets\Scripts\ApplePickerScript.cs" />
     <Compile Include="Assets\Scripts\AppleScript.cs" />
     <Compile Include="Assets\Scripts\AppleTreeScript.cs" />

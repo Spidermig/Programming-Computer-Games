@@ -28,7 +28,7 @@ public class BasketScript : MonoBehaviour
 
         // Move the x position of this Basket to the x position of the Mouse
         Vector3 pos = this.transform.position;
-        pos.x = mousePos2D.x;
+        pos.x = mousePos3D.x;
         this.transform.position = pos;
 
     }
@@ -37,13 +37,13 @@ public class BasketScript : MonoBehaviour
         ApplePickerScript apScript = Camera.main.GetComponent<ApplePickerScript>();
         // Find out what hit this basket
         GameObject collidedWith = coll.gameObject;
-        if(collidedWith.CompareTag("Apple")){
+        if(collidedWith.CompareTag("Apple") || collidedWith.CompareTag("GoldenApple")){
             Destroy(collidedWith);
             // Increase the score
-            scoreCounter.score += 100;
-        } else if (collidedWith.CompareTag("GoldenApple")){
-            Destroy(collidedWith);
-            scoreCounter.score += 200;
+            AppleScript appleScript = collidedWith.GetComponent<AppleScript>();
+            scoreCounter.score += appleScript.point;
+            HighScoreScript.TRY_SET_HIGH_SCORE(scoreCounter.score);
+
         } else if (collidedWith.CompareTag("PoisonApple")){
             Destroy(collidedWith);
             apScript.AppleMissed();
