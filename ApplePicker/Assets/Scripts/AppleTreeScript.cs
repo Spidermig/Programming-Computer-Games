@@ -14,7 +14,7 @@ public class AppleTreeScript : MonoBehaviour
     public GameObject poisonApplePrefab;
 
     // Speed at which the AppleTree moves
-    public float speed = 1f;
+    public float speed = 2f;
 
     // Distance where AppleTree turns around
     public float changeDirChance = 0.1f;
@@ -24,12 +24,12 @@ public class AppleTreeScript : MonoBehaviour
 
 
     // Seconds between Apples instantiations
-    public float appleDropDelay = 1f;
+    public float appleDropDelay = 0.5f;
 
     void Start()
     {
         //start dropping apples
-        Invoke("DropApple", 2f);
+        Invoke("DropApple", 1f);
     }
 
     void DropApple()

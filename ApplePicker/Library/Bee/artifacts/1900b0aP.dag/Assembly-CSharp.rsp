@@ -311,8 +311,10 @@
 "Assets/Scripts/AppleScript.cs"
 "Assets/Scripts/AppleTreeScript.cs"
 "Assets/Scripts/BasketScript.cs"
+"Assets/Scripts/gameOverManagerScript.cs"
 "Assets/Scripts/HighScoreScript.cs"
 "Assets/Scripts/ScoreCounterScript.cs"
+"Assets/Scripts/startGameScript.cs"
 -langversion:9.0
 /deterministic
 /optimize+

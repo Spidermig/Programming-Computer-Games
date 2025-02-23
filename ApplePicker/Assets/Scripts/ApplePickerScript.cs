@@ -60,15 +60,13 @@ public class ApplePickerScript : MonoBehaviour
         // Remove the Basket from the list and destroy the GameObject
         basketList.RemoveAt(basketIndex);
         Destroy(basketGO);
-
-        // If there are no more Baskets left, restart the game
         if (basketList.Count == 0) {
             if (scoreCounter != null) {
-                HighScoreScript.TRY_SET_HIGH_SCORE(scoreCounter.score); // Save high score
-                PlayerPrefs.SetInt("FinalScoreText", scoreCounter.score);  // Save final score
+                HighScoreScript.TRY_SET_HIGH_SCORE(scoreCounter.score);
+                PlayerPrefs.SetInt("FinalScore", scoreCounter.score);
                 PlayerPrefs.Save();
             }
-            SceneManager.LoadScene("GameOverScreen"); // Load Game Over Scene
+            SceneManager.LoadScene("GameOverScreen");
         }
     }
 }

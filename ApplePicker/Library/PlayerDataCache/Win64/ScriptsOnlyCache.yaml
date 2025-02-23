@@ -7,6 +7,8 @@ ScriptsOnlyBuild:
     - BasketScript
     - HighScoreScript
     - ScoreCounterScript
+    - gameOverManagerScript
+    - startGameScript
     Unity.PlasticSCM.Editor.dll:
     - Unity.PlasticSCM.Editor.PlasticWindow
     Unity.Rider.Editor.dll:
@@ -25,7 +27,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
   serializedClasses:
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.UI:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
@@ -34,7 +38,13 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: startGameScript
+    methodName: StartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: gameOverManagerScript
+    methodName: PlayAgain
   sceneClasses:
     Assets/Scenes/GameOverScreen.unity:
     - Class: 1
@@ -71,6 +81,61 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5562}
     - Class: 114
       Script: {instanceID: 6044}
+    - Class: 114
+      Script: {instanceID: 23292}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/StartGameScreen.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1574}
+    - Class: 114
+      Script: {instanceID: 2582}
+    - Class: 114
+      Script: {instanceID: 2786}
+    - Class: 114
+      Script: {instanceID: 3086}
+    - Class: 114
+      Script: {instanceID: 5258}
+    - Class: 114
+      Script: {instanceID: 5562}
+    - Class: 114
+      Script: {instanceID: 6044}
+    - Class: 114
+      Script: {instanceID: 27542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -901,7 +966,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 32df37e541595df00f699e89685f6b24
+      Hash: 7c3718cd67e1a00fc78746e3433a7d61
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ApplePickerScript
@@ -1019,8 +1084,21 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: f0907add7a4b33693da85f14e34551b7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: gameOverManagerScript
+  - hash:
+      serializedVersion: 2
+      Hash: 52537dd456ce4b1dbce5185b0b1dc4f6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: startGameScript
   platform: 19
   scenePathNames:
+  - Assets/Scenes/StartGameScreen.unity
   - Assets/Scenes/_Scene_0.unity
   - Assets/Scenes/GameOverScreen.unity
   playerPath: C:/Users/mabas/Programming Computer Games/ApplePicker/Builds/ApplePicker.exe
