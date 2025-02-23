@@ -34,18 +34,21 @@ public class BasketScript : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision coll) {
-        ApplePickerScript apScript = Camera.main.GetComponent<ApplePickerScript>();
         // Find out what hit this basket
         GameObject collidedWith = coll.gameObject;
+
         if(collidedWith.CompareTag("Apple") || collidedWith.CompareTag("GoldenApple")){
-            Destroy(collidedWith);
             // Increase the score
             AppleScript appleScript = collidedWith.GetComponent<AppleScript>();
-            scoreCounter.score += appleScript.point;
+            if (appleScript != null) {
+                scoreCounter.score += appleScript.point;
+            }
             HighScoreScript.TRY_SET_HIGH_SCORE(scoreCounter.score);
+            Destroy(collidedWith);
 
         } else if (collidedWith.CompareTag("PoisonApple")){
             Destroy(collidedWith);
+            ApplePickerScript apScript = Camera.main.GetComponent<ApplePickerScript>();
             apScript.AppleMissed();
         }
     }

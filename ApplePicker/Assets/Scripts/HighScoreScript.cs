@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // We need this line for uGUI to work.
+using UnityEngine.SceneManagement;
 
 public class HighScoreScript : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class HighScoreScript : MonoBehaviour
 
     private Text txtCom; // txtCome is a reference to this GO's Text component
 
-    void AWAKE(){
-        _UI_Text = this.GetComponent<Text>();
+    void Awake(){
+        _UI_Text = GetComponent<Text>();
 
         // If the PlayerPrefs HighScore already exists, read it
         if (PlayerPrefs.HasKey("HighScore")) {
@@ -30,7 +31,7 @@ public class HighScoreScript : MonoBehaviour
             _SCORE = value;
             PlayerPrefs.SetInt("HighScore", value);
             if (_UI_Text != null) {
-                _UI_Text.text = "High Score: " + value.ToString("#,0");
+                _UI_Text.text = "High Score: " + value.ToString();
             }
         }
     }
